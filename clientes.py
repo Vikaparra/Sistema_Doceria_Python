@@ -1,11 +1,15 @@
-class Cliente:
-    def __init__(self, contador, nome, tel):
-        self.id = contador
-        self.nome = nome
-        self.telefone = tel 
-    
-    def __str__(self):
-        return f"----------------\nID: {self.id}\nNome: {self.nome}\nTelefone: {self.telefone}\n"
+from classes import Cliente
+
+
+def interface_clientes(clientes):
+    opcaoClientes = "x"
+    while opcaoClientes != "3":
+        print("Deseja:\n1- Cadastrar Cliente\n2- Visualizar Cliente\n3- Sair")
+        opcaoClientes = input()
+        if opcaoClientes == "1":
+            clientes = cadastrar_clientes(clientes)
+        elif opcaoClientes == "2":
+            visualizar_clientes(clientes)
 
 
 def cadastrar_clientes(clientes):
@@ -23,8 +27,3 @@ def visualizar_clientes(clientes):
     for cliente in clientes:
         print(cliente)
     print("----------------")
-
-
-clientes = []
-clientes = cadastrar_clientes(clientes)
-visualizar_clientes(clientes)
